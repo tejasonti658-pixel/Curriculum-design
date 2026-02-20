@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CurricumForge - AI-Powered Curriculum Design</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-robot"></i>
+                <span>CurriculumForge</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#generator">Generator</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#about">About</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="btn-outline" id="savedBtn"><i class="far fa-bookmark"></i> Saved</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Generate Industry-Aligned Curriculum with <span class="gradient-text">AI</span></h1>
+            <p>Create comprehensive, outcome-based course structures in minutes using advanced generative AI. Perfect for educators, institutions, and corporate training.</p>
+            <div class="hero-cta">
+                <button class="btn-primary" id="startGeneratingBtn">
+                    <i class="fas fa-magic"></i> Start Generating
+                </button>
+                <button class="btn-secondary" id="watchDemoBtn">
+                    <i class="far fa-play-circle"></i> Watch Demo
+                </button>
+            </div>
+            <div class="stats">
+                <div class="stat-item">
+                    <span class="stat-number">1000+</span>
+                    <span class="stat-label">Curriculam Generated</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">50+</span>
+                    <span class="stat-label">Industries</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">98%</span>
+                    <span class="stat-label">Satisfaction</span>
+                </div>
+            </div>
+        </div>
+        <div class="hero-image">
+            <div class="floating-card">
+                <i class="fas fa-graduation-cap"></i>
+                <h3>AI Curriculum Designer</h3>
+                <div class="progress-bar"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Generator Section -->
+    <section id="generator" class="generator">
+        <div class="container">
+            <h2>Curriculum Generator</h2>
+            <p class="section-subtitle">Fill in the details below to generate your custom curriculum</p>
+            
+            <div class="generator-grid">
+                <!-- Input Form -->
+                <div class="input-card">
+                    <h3><i class="fas fa-sliders-h"></i> Course Parameters</h3>
+                    
+                    <form id="curriculumForm">
+                        <div class="form-group">
+                            <label><i class="fas fa-book"></i> Course Title *</label>
+                            <input type="text" id="courseTitle" placeholder="e.g., Introduction to Machine Learning" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label><i class="fas fa-align-left"></i> Course Description *</label>
+                            <textarea id="courseDescription" rows="3" placeholder="Describe the course objectives and scope..." required></textarea>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label><i class="fas fa-graduation-cap"></i> Education Level</label>
+                                <select id="educationLevel">
+                                    <option value="high_school">High School</option>
+                                    <option value="undergraduate" selected>Undergraduate</option>
+                                    <option value="graduate">Graduate</option>
+                                    <option value="professional">Professional</option>
+                                    <option value="vocational">Vocational</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label><i class="fas fa-chart-line"></i> Difficulty</label>
+                                <select id="difficulty">
+                                    <option value="beginner">Beginner</option>
+                                    <option value="intermediate" selected>Intermediate</option>
+                                    <option value="advanced">Advanced</option>
+                                    <option value="expert">Expert</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label><i class="far fa-calendar-alt"></i> Duration (weeks)</label>
+                                <input type="number" id="durationWeeks" min="4" max="52" value="12">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label><i class="far fa-clock"></i> Hours/Week</label>
+                                <input type="number" id="hoursPerWeek" min="1" max="40" value="3" step="0.5">
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label><i class="fas fa-industry"></i> Industry Domain</label>
+                            <input type="text" id="industryDomain" placeholder="e.g., Healthcare, Finance, Technology">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label><i class="fas fa-users"></i> Target Audience</label>
+                            <input type="text" id="targetAudience" placeholder="e.g., Working professionals, Fresh graduates">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label><i class="fas fa-microchip"></i> AI Model</label>
+                            <div class="model-selector">
+                                <label class="model-option">
+                                    <input type="radio" name="aiModel" value="gemini" checked>
+                                    <span><i class="fas fa-robot"></i> Gemini</span>
+                                </label>
+                                <label class="model-option">
+                                    <input type="radio" name="aiModel" value="ibm">
+                                    <span><i class="fas fa-brain"></i> IBM Watson</span>
+                                </label>
+                                <label class="model-option">
+                                    <input type="radio" name="aiModel" value="huggingface">
+                                    <span><i class="fas fa-face-smile"></i> Hugging Face</span>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <button type="submit" class="btn-generate" id="generateBtn">
+                            <i class="fas fa-cogs"></i> Generate Curriculum
+                        </button>
+                    </form>
+                </div>
+                
+                <!-- Loading State -->
+                <div class="loading-state" id="loadingState" style="display: none;">
+                    <div class="loader"></div>
+                    <h3>Generating Your Curriculum</h3>
+                    <p>Our AI is crafting a comprehensive course structure...</p>
+                    <div class="loading-steps">
+                        <div class="step active">Analyzing requirements</div>
+                        <div class="step">Generating learning outcomes</div>
+                        <div class="step">Creating topic structure</div>
+                        <div class="step">Mapping weekly plan</div>
+                        <div class="step">Optimizing for industry alignment</div>
+                    </div>
+                </div>
+                
+                <!-- Results Display -->
+                <div class="results-card" id="resultsCard" style="display: none;">
+                    <div class="results-header">
+                        <h3><i class="fas fa-check-circle"></i> Generated Curriculum</h3>
+                        <div class="results-actions">
+                            <button class="btn-icon" id="downloadBtn"><i class="fas fa-download"></i></button>
+                            <button class="btn-icon" id="saveBtn"><i class="far fa-bookmark"></i></button>
+                            <button class="btn-icon" id="shareBtn"><i class="fas fa-share-alt"></i></button>
+                        </div>
+                    </div>
+                    
+                    <div class="results-tabs">
+                        <button class="tab-btn active" data-tab="overview">Overview</button>
+                        <button class="tab-btn" data-tab="outcomes">Learning Outcomes</button>
+                        <button class="tab-btn" data-tab="topics">Topics</button>
+                        <button class="tab-btn" data-tab="weekly">Weekly Plan</button>
+                        <button class="tab-btn" data-tab="assessments">Assessments</button>
+                    </div>
+                    
+                    <div class="tab-content">
+                        <!-- Overview Tab -->
+                        <div class="tab-pane active" id="overviewTab">
+                            <div class="course-info">
+                                <h4 id="resultTitle"></h4>
+                                <p id="resultDescription"></p>
+                            </div>
+                            
+                            <div class="metrics-grid">
+                                <div class="metric-card">
+                                    <i class="fas fa-clock"></i>
+                                    <span class="metric-value" id="totalHours">0</span>
+                                    <span class="metric-label">Total Hours</span>
+                                </div>
+                                <div class="metric-card">
+                                    <i class="fas fa-list"></i>
+                                    <span class="metric-value" id="totalTopics">0</span>
+                                    <span class="metric-label">Topics</span>
+                                </div>
+                                <div class="metric-card">
+                                    <i class="fas fa-tasks"></i>
+                                    <span class="metric-value" id="totalOutcomes">0</span>
+                                    <span class="metric-label">Outcomes</span>
+                                </div>
+                                <div class="metric-card">
+                                    <i class="fas fa-industry"></i>
+                                    <span class="metric-value" id="industryAligned">Yes</span>
+                                    <span class="metric-label">Industry Aligned</span>
+                                </div>
+                            </div>
+                            
+                            <div class="industry-alignment">
+                                <h4>Industry Alignment</h4>
+                                <div id="industryAlignment"></div>
+                            </div>
+                        </div>
+                        
+                        <!-- Other tabs will be populated dynamically -->
+                        <div class="tab-pane" id="outcomesTab"></div>
+                        <div class="tab-pane" id="topicsTab"></div>
+                        <div class="tab-pane" id="weeklyTab"></div>
+                        <div class="tab-pane" id="assessmentsTab"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <h2>Powerful Features</h2>
+            <p class="section-subtitle">Everything you need to design perfect curricula</p>
+            
+            <div class="features-grid">
+                <div class="feature-card" data-aos="fade-up">
+                    <div class="feature-icon">
+                        <i class="fas fa-sitemap"></i>
+                    </div>
+                    <h3>Course Structure Generation</h3>
+                    <p>Automatically generate comprehensive course outlines with logical flow and progressive difficulty.</p>
+                </div>
+                
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="feature-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3>Topic Recommendations</h3>
+                    <p>Get intelligent suggestions for relevant subtopics based on industry trends and prerequisites.</p>
+                </div>
+                
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="feature-icon">
+                        <i class="fas fa-calendar-week"></i>
+                    </div>
+                    <h3>Curriculum Planning</h3>
+                    <p>Detailed weekly breakdowns with activities, assignments, and time allocation.</p>
+                </div>
+                
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="feature-icon">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <h3>Learning Outcome Mapping</h3>
+                    <p>Bloom's taxonomy-aligned outcomes with assessment methods for each learning objective.</p>
+                </div>
+                
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-pie"></i>
+                    </div>
+                    <h3>Academic Optimization</h3>
+                    <p>AI-powered analysis to balance cognitive load and optimize learning progression.</p>
+                </div>
+                
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="500">
+                    <div class="feature-icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <h3>Industry Alignment</h3>
+                    <p>Ensure your curriculum meets current industry standards and employer expectations.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="logo">
+                        <i class="fas fa-robot"></i>
+                        <span>CurricuForge</span>
+                    </div>
+                    <p>Revolutionizing curriculum design with generative AI.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#generator">Generator</a></li>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#about">About</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Technologies</h4>
+                    <ul>
+                        <li>Python & FastAPI</li>
+                        <li>Google Gemini AI</li>
+                        <li>IBM Watson</li>
+                        <li>Hugging Face</li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-discord"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 CurriculumForge. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/api.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
